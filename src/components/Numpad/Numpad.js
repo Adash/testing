@@ -41,20 +41,29 @@ const Numpad = () => {
       <div className="App-header">
         <div
           css={`
+            width: 180px;
+            height: 250px;
             display: flex;
             flex-direction: column;
+            justify-content: center;
+            align-items: stretch;
+            align-content: stretch;
           `}
         >
-          <p
+          <h3
             css={`
               background-color: ${backgroundColor};
+              margin: 0 0 5px 0;
+              padding-bottom: 10px;
+              padding-top: 10px;
             `}
           >
             {screen}
-          </p>
+          </h3>
           <Digital number={number} setNumber={setNumber} />
           <div
             css={`
+              flex-grow: 1;
               display: grid;
               grid-template-columns: 1fr 1fr 1fr;
               grid-template-rows: 1fr 1fr 1fr 1fr;
