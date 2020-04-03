@@ -44,6 +44,7 @@ const Navbar = () => {
         <NavLink to="/">Home</NavLink>
         <NavLink to="/numpad">Numpad</NavLink>
         <NavLink to="/other">Other</NavLink>
+        <NavLink to="/randomthemer">Themer</NavLink>
       </div>
     </nav>
   );
