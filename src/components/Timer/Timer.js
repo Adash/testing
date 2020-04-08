@@ -6,6 +6,7 @@ import List from '../List/List';
 const getOnlyHours = number =>
   Math.floor((number % (60 * 60 * 24)) / (60 * 60));
 const getOnlyMinutes = number => Math.floor((number % (60 * 60)) / 60);
+const getOnlySeconds = number => Math.floor(number % 60);
 
 const Timer = () => {
   const [timesList, setTimesList] = useState([]);
@@ -41,7 +42,8 @@ const Timer = () => {
   return (
     <Wrapper>
       <p>
-        {getOnlyHours(seconds)}:{getOnlyMinutes(seconds)}
+        {getOnlyHours(seconds)}:{getOnlyMinutes(seconds)}:
+        {getOnlySeconds(seconds)}
       </p>
       <div>
         {!running ? (
