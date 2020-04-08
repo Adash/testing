@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import 'styled-components/macro';
-import Button from '../SimpleButton/SimpleButton';
+// import Button from '../SimpleButton/SimpleButton';
 
 const RandomThemer = () => {
   const [randomColor, setRandomColor] = useState('#fff000');
@@ -23,8 +23,16 @@ const RandomThemer = () => {
         color: white;
       `}
     >
-      <p>{randomColor}</p>
-      <Button handleClick={handleClick}>Generate</Button>
+      <p
+        css={`
+          width: 100px;
+          margin: 0;
+          text-align: center;
+          background-color: gray;
+        `}
+      >
+        {randomColor}
+      </p>
       <div
         css={`
           display: flex;
@@ -39,6 +47,16 @@ const RandomThemer = () => {
           `}
         ></div>
       </div>
+      <button
+        css={`
+          width: 100px;
+          height: 40px;
+          font-size: 11px;
+        `}
+        onClick={handleClick}
+      >
+        Generate
+      </button>
     </div>
   );
 };

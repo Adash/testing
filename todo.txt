@@ -1,0 +1,1 @@
+styled page simulating blog which pulls content from some kind of api

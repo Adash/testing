@@ -4,6 +4,7 @@ import Home from './components/Home/Home';
 import Numpad from './components/Numpad/Numpad';
 import Other from './components/OtherComponent/OtherComponent';
 import RandomThemer from './components/RandomThemer/RandomThemer';
+import Timer from './components/Timer/Timer';
 import { Router } from '@reach/router';
 
 const App = () => {
@@ -14,7 +15,8 @@ const App = () => {
         <Home path="/" />
         <Numpad path="/numpad" />
         <Other path="/other" />
-        <RandomThemer path="randomthemer" />
+        <RandomThemer path="/randomthemer" />
+        <Timer path="/timer" />
       </Router>
     </>
   );
