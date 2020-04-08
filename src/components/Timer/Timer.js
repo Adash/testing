@@ -18,7 +18,7 @@ const Timer = () => {
     setSecondsTimer(
       setInterval(() => {
         setSeconds(prevState => prevState + 1);
-      }, 1)
+      }, 1000)
     );
   };
 
