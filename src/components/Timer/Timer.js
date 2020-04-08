@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Button } from 'reactstrap';
 import Wrapper from '../Wrapper/Wrapper';
 import List from '../List/List';
 
@@ -42,13 +43,23 @@ const Timer = () => {
       <p>
         {getOnlyHours(seconds)}:{getOnlyMinutes(seconds)}
       </p>
-      {!running ? (
-        <button onClick={startTimer}>start</button>
-      ) : (
-        <button onClick={stopTimer}>stop</button>
-      )}
-      <button onClick={resetTimer}>reset</button>
-      <button onClick={saveTime}>save</button>
+      <div>
+        {!running ? (
+          <Button color="primary" onClick={startTimer}>
+            start
+          </Button>
+        ) : (
+          <Button color="warning" onClick={stopTimer}>
+            stop
+          </Button>
+        )}
+        <Button color="danger" onClick={resetTimer}>
+          reset
+        </Button>
+        <Button color="info" onClick={saveTime}>
+          save
+        </Button>
+      </div>
       <List data={timesList} />
     </Wrapper>
   );
