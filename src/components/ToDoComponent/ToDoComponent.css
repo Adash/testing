@@ -16,3 +16,8 @@
 .App-link {
   color: #61dafb;
 }
+
+.input_form {
+  display: flex;
+  flex-direction: column;
+}
