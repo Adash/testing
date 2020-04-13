@@ -1,1 +1,5 @@
-styled page simulating blog which pulls content from some kind of api
+
+add notes fiels to eavery saved timer 5
+connect timer with firebase 10
+
+styled page simulating blog which pulls content from some kind of api 20

@@ -2,7 +2,7 @@ import React from 'react';
 import List from '../List/List';
 import { mount } from 'enzyme';
 
-describe('Other Component', () => {
+describe('ToDo Component', () => {
   test('test of the tests runner', () => {
     expect(true).toBeTruthy();
   });

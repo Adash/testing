@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
-import './OtherComponent.css';
+import './ToDoComponent.css';
 import Item from '../Item/Item';
 import SimpleButton from '../SimpleButton/SimpleButton';
 import List from '../List/List';
 
-function OtherComponent() {
+function ToDoComponent() {
   const [text, setText] = useState('');
   const [change, setChange] = useState(false);
   const [storage, setStorage] = useState([]);
 
-  const handleClick = e => {
+  const handleClick = (e) => {
     e.preventDefault();
     setStorage([...storage, text]);
     setChange(true);
@@ -39,4 +39,4 @@ function OtherComponent() {
   );
 }
 
-export default OtherComponent;
+export default ToDoComponent;

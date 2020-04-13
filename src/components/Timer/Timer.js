@@ -3,10 +3,24 @@ import { Button } from 'reactstrap';
 import Wrapper from '../Wrapper/Wrapper';
 import List from '../List/List';
 
-const getOnlyHours = number =>
+const getOnlyHours = (number) =>
   Math.floor((number % (60 * 60 * 24)) / (60 * 60));
-const getOnlyMinutes = number => Math.floor((number % (60 * 60)) / 60);
-const getOnlySeconds = number => Math.floor(number % 60);
+const getOnlyMinutes = (number) => Math.floor((number % (60 * 60)) / 60);
+const getOnlySeconds = (number) => Math.floor(number % 60);
+
+const PaddedTime = ({ children }) => (
+  <>{children.toString().padStart(2, '0')}</>
+);
+
+const TimerDisplay = ({ seconds }) => {
+  return (
+    <p>
+      <PaddedTime>{getOnlyHours(seconds)}</PaddedTime>:
+      <PaddedTime>{getOnlyMinutes(seconds)}</PaddedTime>:
+      <PaddedTime>{getOnlySeconds(seconds)}</PaddedTime>
+    </p>
+  );
+};
 
 const Timer = () => {
   const [timesList, setTimesList] = useState([]);
@@ -18,7 +32,7 @@ const Timer = () => {
     setRunning(true);
     setSecondsTimer(
       setInterval(() => {
-        setSeconds(prevState => prevState + 1);
+        setSeconds((prevState) => prevState + 1);
       }, 1000)
     );
   };
@@ -36,15 +50,12 @@ const Timer = () => {
 
   const saveTime = () => {
     const newTime = getOnlyHours(seconds) + ':' + getOnlyMinutes(seconds);
-    setTimesList(prevState => [...prevState, newTime]);
+    setTimesList((prevState) => [...prevState, newTime]);
   };
 
   return (
     <Wrapper>
-      <p>
-        {getOnlyHours(seconds)}:{getOnlyMinutes(seconds)}:
-        {getOnlySeconds(seconds)}
-      </p>
+      <TimerDisplay seconds={seconds} />
       <div>
         {!running ? (
           <Button color="primary" onClick={startTimer}>

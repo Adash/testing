@@ -12,7 +12,7 @@ describe('Simple Button', () => {
   });
 
   // it('tests the button onClick handler', () => {
-  //   const Button = mount(<SimpleButton handleClick={jsCallback} />);
-  //   expect(Button.find(jsCallback).length).toEqual(1);
+  //   const Button = mount(<SimpleButton handleClick={jsCallback} test="one" />);
+  //   expect(Button.find({ prop: 'test' })).toEqual('one');
   // });
 });

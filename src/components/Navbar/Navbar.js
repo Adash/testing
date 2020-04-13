@@ -6,7 +6,7 @@ import { Link } from '@reach/router';
 const NavLink = styled(Link)`
   color: #222;
   font-size: 1rem;
-  font-weight: ${props => props.fontWeight || 'normal'};
+  font-weight: ${(props) => props.fontWeight || 'normal'};
   line-height: 1;
   margin: 0 0.5rem 0 0;
   padding: 0.25rem;
@@ -44,7 +44,7 @@ const Navbar = () => {
         <NavLink to="/">Home</NavLink>
         <NavLink to="/numpad">Numpad</NavLink>
         <NavLink to="/timer">Timer</NavLink>
-        <NavLink to="/other">Other</NavLink>
+        <NavLink to="/todo">ToDo</NavLink>
         <NavLink to="/randomthemer">Themer</NavLink>
       </div>
     </nav>
