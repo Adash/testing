@@ -6,13 +6,12 @@ import List from '../List/List';
 
 function ToDoComponent() {
   const [text, setText] = useState('');
-  const [change, setChange] = useState(false);
   const [storage, setStorage] = useState([]);
 
   const handleClick = (e) => {
     e.preventDefault();
     setStorage([...storage, text]);
-    setChange(true);
+    setText('');
   };
 
   return (
@@ -24,12 +23,7 @@ function ToDoComponent() {
           `}
         >
           <form>
-            <Item
-              text={text}
-              setText={setText}
-              change={change}
-              resetChange={setChange}
-            />
+            <Item text={text} setText={setText} />
             <SimpleButton handleClick={handleClick}>Enter</SimpleButton>
           </form>
           <List data={storage} />
