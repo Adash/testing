@@ -5,18 +5,25 @@ import SimpleButton from '../SimpleButton/SimpleButton';
 import List from '../List/List';
 
 function ToDoComponent() {
+  const [error, setError] = useState(false);
   const [text, setText] = useState('');
   const [storage, setStorage] = useState([]);
-  const refValue = useRef('hellos');
+  const refValue = useRef('');
 
   const handleClick = (e) => {
     e.preventDefault();
+    if (refValue.current.value === '') {
+      setError('Please enter your name in the author field');
+      return;
+    }
     if (text === '') {
+      setError('Please type something in the note field');
       return;
     }
     const newItem = `${text} - author: ${refValue.current.value}`;
     setStorage([...storage, newItem]);
     setText('');
+    setError(false);
   };
 
   return (
@@ -28,6 +35,7 @@ function ToDoComponent() {
           `}
         >
           <form>
+            {error ? <p>{error}</p> : null}
             <div class="input_form">
               <label for="author">Author</label>
               <input id="author" type="text" ref={refValue} />
