@@ -1,5 +1,7 @@
 
 add notes fiels to eavery saved timer 5
+add date to saved time in history 5
+create and implement new list component specifically for the Timer page            
 connect timer with firebase 10
 
 styled page simulating blog which pulls content from some kind of api 20

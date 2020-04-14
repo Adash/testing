@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Button } from 'reactstrap';
 import Wrapper from '../Wrapper/Wrapper';
 import List from '../List/List';
+import moment from 'moment';
 
 const getOnlyHours = (number) =>
   Math.floor((number % (60 * 60 * 24)) / (60 * 60));
@@ -49,7 +50,15 @@ const Timer = () => {
   };
 
   const saveTime = () => {
-    const newTime = getOnlyHours(seconds) + ':' + getOnlyMinutes(seconds);
+    const currentDateTime = moment().format('h:mm DD-MM-YY');
+    const newTime =
+      'On ' +
+      currentDateTime +
+      ' you clocked ' +
+      getOnlyHours(seconds) +
+      'h:' +
+      getOnlyMinutes(seconds) +
+      'm';
     setTimesList((prevState) => [...prevState, newTime]);
   };
 
