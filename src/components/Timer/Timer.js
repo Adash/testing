@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Button } from 'reactstrap';
 import Wrapper from '../Wrapper/Wrapper';
-import List from '../List/List';
+import TimeHistory from './TimeHistory';
 import moment from 'moment';
 
 const getOnlyHours = (number) =>
@@ -51,14 +51,19 @@ const Timer = () => {
 
   const saveTime = () => {
     const currentDateTime = moment().format('h:mm DD-MM-YY');
-    const newTime =
-      'On ' +
-      currentDateTime +
-      ' you clocked ' +
-      getOnlyHours(seconds) +
-      'h:' +
-      getOnlyMinutes(seconds) +
-      'm';
+    // const newTime =
+    //   'On ' +
+    //   currentDateTime +
+    //   ' you clocked ' +
+    //   getOnlyHours(seconds) +
+    //   'h:' +
+    //   getOnlyMinutes(seconds) +
+    //   'm';
+    const newTime = {
+      date: currentDateTime,
+      hours: getOnlyHours(seconds),
+      minutes: getOnlyMinutes(seconds),
+    };
     setTimesList((prevState) => [...prevState, newTime]);
   };
 
@@ -82,7 +87,7 @@ const Timer = () => {
           save
         </Button>
       </div>
-      <List data={timesList} />
+      <TimeHistory data={timesList} />
     </Wrapper>
   );
 };
