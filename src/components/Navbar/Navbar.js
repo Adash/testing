@@ -44,6 +44,7 @@ const Navbar = () => {
         <NavLink to="/">Home</NavLink>
         <NavLink to="/numpad">Numpad</NavLink>
         <NavLink to="/timer">Timer</NavLink>
+        <NavLink to="/rounds">Rounds</NavLink>
         <NavLink to="/todo">ToDo</NavLink>
         <NavLink to="/randomthemer">Themer</NavLink>
       </div>
