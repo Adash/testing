@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Button } from 'reactstrap';
 import Wrapper from '../Wrapper/Wrapper';
 import soundFile from './bell.wav';
-import Sound from 'react-sound';
+import RoundSelect from './RoundSelect';
 
 const getOnlyHours = (number) =>
   Math.floor((number % (60 * 60 * 24)) / (60 * 60));
@@ -24,7 +24,6 @@ const TimerDisplay = ({ seconds }) => {
 };
 
 const Rounds = () => {
-  const [gongOne, setGongOne] = useState(false);
   const [running, setRunning] = useState(false);
   const [seconds, setSeconds] = useState(0);
   const [secondsTimer, setSecondsTimer] = useState(false);
@@ -35,9 +34,10 @@ const Rounds = () => {
   // }, []);
 
   const Alert = ({ sound }) => {
-    const myRef = React.createRef();
+    // not sure why I would need the ref for that?
     if (seconds === gongAt) {
-      return <audio ref={myRef} src={sound} autoPlay />;
+      // return <audio ref={myRef} src={sound} autoPlay />;
+      return <audio src={sound} autoPlay />;
     } else {
       return null;
     }
@@ -70,22 +70,12 @@ const Rounds = () => {
     setSeconds(0);
   };
 
-  const play = () => {
-    setGongOne(true);
-  };
+  const play = () => {};
 
   return (
     <Wrapper>
-      {gongOne && (
-        <Sound
-          url={soundFile}
-          playStatus={Sound.status.PLAYING}
-          onFinishedPlaying={() => {
-            setGongOne(false);
-          }}
-        />
-      )}
       <Alert sound={soundFile} />
+      <RoundSelect gongAt={gongAt} setGongAt={setGongAt} />
       <TimerDisplay seconds={seconds} />
       <div>
         {!running ? (
