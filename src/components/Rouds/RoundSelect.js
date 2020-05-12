@@ -1,8 +1,8 @@
 import React from 'react';
 
-let options = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+let options = [3, 5, 10, 15, 20, 25, 30, 45, 60, 180];
 
-const RoundSelect = ({ gongAt, setGongAt }) => {
+const RoundSelect = ({ gongAt, setGongAt, selections = options }) => {
   return (
     <>
       <label htmlFor="timer_one_select">gong at</label>
@@ -11,7 +11,7 @@ const RoundSelect = ({ gongAt, setGongAt }) => {
         value={gongAt}
         onChange={(e) => setGongAt(parseInt(e.target.value, 10))}
       >
-        {options.map((value) => (
+        {selections.map((value) => (
           <option key={value} value={value}>
             {value}
           </option>

@@ -29,13 +29,14 @@ const Navbar = () => {
         padding: 5px;
       `}
     >
-      <p
+      <h2
         css={`
           font-size: 1.5em;
+          font-weight: bold;
         `}
       >
-        Navbar
-      </p>
+        Skidblandir
+      </h2>
       <div
         css={`
         display=flex;
